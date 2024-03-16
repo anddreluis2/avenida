@@ -29,7 +29,7 @@ func InitDB() (*gorm.DB, error) {
 		logger.Errorf("Error initializing database: %v", err)
 		return nil, err
 	}
-	err = db.AutoMigrate(&schemas.Account{}, &schemas.Client{})
+	err = db.AutoMigrate(&schemas.Account{}, &schemas.Clients{}, &schemas.ScheduledTransactions{}, &schemas.Transactions{})
 	if err != nil {
 		logger.Errorf("Error migrating schemas: %v", err)
 		return nil, err
