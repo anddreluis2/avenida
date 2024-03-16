@@ -1,20 +1,7 @@
 package main
 
-import (
-	"fmt"
-	"log"
-	"os"
-
-	"github.com/joho/godotenv"
-)
+import "github.com/anddreluis2/avenida/router"
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	test := os.Getenv("TEST")
-
-	fmt.Println(test)
+	router.Initialize()
 }
